@@ -8,7 +8,7 @@ Scrapes monthly US Visa Bulletin data from [travel.state.gov](https://travel.sta
 - Extracts both **Final Action Dates** (Chart A) and **Dates for Filing** (Chart B)
 - Covers all tracked countries: China, India, Mexico, Philippines, and All Other
 - Stores structured JSON in `data/` directory, committed to the repo
-- Generates aggregated `latest.json` (2 most recent) and `trend.json` (12 most recent) for iOS app consumption
+- Generates aggregated `latest.json` (2 most recent) and `trend.json` (12 most recent) for client consumption
 
 ## Architecture
 
@@ -19,7 +19,6 @@ GitHub Actions (monthly cron)
   ↓ git commit + push
 GitHub raw URL (CDN)
   ↓ static JSON
-iOS App (fetch URL)
 ```
 
 ## Data URLs
