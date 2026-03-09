@@ -16,8 +16,8 @@ iOS App                    →  fetch raw URL           →  本地计算 change
 ## 2. 数据源 URL
 
 ```
-https://raw.githubusercontent.com/<user>/VisaBulletin/main/data/latest.json
-https://raw.githubusercontent.com/<user>/VisaBulletin/main/data/trend.json
+https://raw.githubusercontent.com/aiyurealestateagent/VisaBulletin/main/data/latest.json
+https://raw.githubusercontent.com/aiyurealestateagent/VisaBulletin/main/data/trend.json
 ```
 
 | 文件 | 内容 | iOS 用途 |
@@ -43,7 +43,7 @@ https://raw.githubusercontent.com/<user>/VisaBulletin/main/data/trend.json
 
 ---
 
-## 4. `data` JSONB 完整结构
+## 4. `data` 完整结构
 
 ```json
 {
@@ -120,17 +120,15 @@ https://raw.githubusercontent.com/<user>/VisaBulletin/main/data/trend.json
 
 ```swift
 func fetchLatestBulletins() async throws -> [BulletinRow] {
-    let url = URL(string: "https://raw.githubusercontent.com/<user>/VisaBulletin/main/data/latest.json")!
+    let url = URL(string: "https://raw.githubusercontent.com/aiyurealestateagent/VisaBulletin/main/data/latest.json")!
     let (data, _) = try await URLSession.shared.data(from: url)
-    let decoder = JSONDecoder()
-    return try decoder.decode([BulletinRow].self, from: data)
+    return try JSONDecoder().decode([BulletinRow].self, from: data)
 }
 
 func fetchTrendData() async throws -> [BulletinRow] {
-    let url = URL(string: "https://raw.githubusercontent.com/<user>/VisaBulletin/main/data/trend.json")!
+    let url = URL(string: "https://raw.githubusercontent.com/aiyurealestateagent/VisaBulletin/main/data/trend.json")!
     let (data, _) = try await URLSession.shared.data(from: url)
-    let decoder = JSONDecoder()
-    return try decoder.decode([BulletinRow].self, from: data)
+    return try JSONDecoder().decode([BulletinRow].self, from: data)
 }
 ```
 
