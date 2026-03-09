@@ -1,0 +1,17 @@
+{
+  "name": "visa-bulletin",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "scrape": "tsx src/scrape-latest.ts",
+    "backfill": "tsx src/backfill.ts"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "tsx": "^4.21.0",
+    "typescript": "^5"
+  }
+}
